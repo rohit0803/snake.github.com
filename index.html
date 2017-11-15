@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app='ng-app'>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head> 
+
+  <body ng-controller="MainCtrl">
+
+    <div id="MainContainer">
+      
+      <h3>Points: {{score}}</h3>
+      <div id="back">
+          <div class="row" ng-repeat="column in board">
+              <div class="column back-affect"
+                
+                  ng-style="{'background': setStyling($parent.$index, $index)}"
+                  ng-repeat="row in column track by $index"
+              ></div>
+          </div>
+      </div>
+      <div id="startGame" ng-click="startGame()">Start Game</div>
+    </div>
+    <form name="myForm" class="my-form">
+          <h1>SNAKES GAME</h1>
+          <h3>Custom Background Image: </h3><input name="input" ng-model="userType" >
+          <button ng-click="Applyback(userType)">Apply</button>
+      </form>
+      
+    <script src="angular.min.js"></script>
+    <script src="main.js"></script> 
+  </body>
+
+</html>
